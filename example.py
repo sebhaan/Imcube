@@ -6,8 +6,8 @@ from matplotlib import cm
 import matplotlib.pyplot as plt
 reload(cs)
 
-Ncube = 10 # NUmber of voxels along each axis
-Lcube = 100 # Lenght of cube in meters
+Ncube = 10 # Number of voxels along each axis
+Lcube = 100 # Length of cube in meters
 voxsize = Lcube / Ncube # size of one voxel in meters
 
 cgen = (np.linspace(1,Ncube,Ncube) - 0.5) * voxsize
@@ -23,8 +23,10 @@ magnetic = 10. * np.exp(-0.05*r)
 mask = np.zeros_like(magnetic)
 mask[density < 3] = 1
 
-# plot voxel model
+# plot voxel model with mask
 ic = cs.imcube()
 ic.cubeshow(density, data_color=magnetic, mask = mask, colorscheme = cm.jet, voxelsize = (voxsize,voxsize,voxsize), offset = (0,0,-100), show = True, savefig = False)
-
+# plot voxel model without mask and only one datacube
+print(" ")
+ic.cubeshow(density, colorscheme = cm.jet, voxelsize = (voxsize,voxsize,voxsize), offset = (0,0,-100), show = True, savefig = False)
 
