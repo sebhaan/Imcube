@@ -11,5 +11,4 @@ Examples:
 
 
 <p align="left"><img src="/examples/voxelcube_example2.png" width="500" /></p>
-<p align="left"><img src="/examples/voxelcube_example.png" width="500" /></p>
 <p align="left"><img src="/examples/voxelcube_example3.png" width="500" /></p>
